@@ -1,0 +1,44 @@
+# Simbols' table 
+        Name   Section   Value     Vis     Num
+       .data      DATA       0   local     0     1
+         pom      DATA       0   local     1     1
+         niz      DATA       1   local     2     1
+    niz_kraj      DATA      11   local     3     1
+       .text      TEXT       0   local     4     1
+        loop      TEXT      12   local     5     1
+         end      TEXT      48   local     6     1
+        .bss       BSS       0   local     7     1
+        swap       UND       0  global     8     0
+
+# Segments' table 
+    Name	Base	Size
+   .data	 100	  11
+   .text	 111	  50
+    .bss	 161	   8
+
+# .rel .text
+  Offset    Type   Ref
+       a  PC_ABS     0
+       e  PC_ABS     0
+      12  PC_ABS     0
+      1a  PC_ABS     0
+      1e  PC_ABS     0
+      22  PC_ABS     8
+
+
+# .text section
+f5 20 05 00 f5 40 00 00 
+f5 60 01 00 f5 9b 00 00 
+f5 b0 00 00 c1 a0 01 00 
+f6 0d 00 00 d1 9b 00 00 
+ac 00 fe ff d1 a0 05 00 
+75 e0 0c 00 35 e0 30 00 
+e9 e0 
+
+# .data section
+00 01 00 02 00 fb ff 02 
+00 04 00 
+
+# .bss section
+00 00 00 00 00 00 00 00 
+

@@ -1,0 +1,59 @@
+# Simbols' table 
+        Name   Section   Value     Vis     Num
+       .data      DATA       0   local     0     1
+        temp      DATA       0   local     1     1
+         tem      DATA      12   local     2     1
+        .bss       BSS       0   local     3     1
+         niz       BSS       0  global     4     1
+       .text      TEXT       0   local     5     1
+      _start      TEXT       0  global     6     1
+        loop      TEXT      32   local     7     1
+        incr      TEXT      44   local     8     1
+        cont      TEXT      52   local     9     1
+       temp1       UND       0  global    10     0
+       temp2       UND       0  global    11     0
+      printc       UND       0  global    12     0
+      printi       UND       0  global    13     0
+
+# Segments' table 
+    Name	Base	Size
+   .data	   0	  28
+    .bss	  28	  20
+   .text	  48	  58
+
+# .rel .text
+  Offset    Type   Ref
+      18  PC_ABS    12
+      28  PC_ABS     3
+      36  PC_ABS    13
+
+
+# .rel .data
+  Offset    Type   Ref
+       4  PC_ABS    10
+       8  PC_ABS    11
+      10  PC_ABS    11
+      14  PC_ABS     5
+      18  PC_ABS     3
+
+
+# .text section
+c1 2a c1 f0 20 00 75 e0 
+20 00 69 20 85 2a f5 00 
+41 00 b5 70 20 00 ec 00 
+fe ff e5 20 ab 20 05 00 
+d1 49 35 e0 34 00 f5 7a 
+00 00 81 0b c1 40 02 00 
+f5 e0 20 00 ec 00 fe ff 
+e9 e0 
+
+# .data section
+03 00 02 00 00 00 05 00 
+00 00 0c 00 f4 ff ff ff 
+00 00 00 00 20 00 00 00 
+00 00 00 00 
+
+# .bss section
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 
+00 00 00 00 

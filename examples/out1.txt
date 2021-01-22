@@ -1,0 +1,51 @@
+# Simbols' table 
+        Name   Section   Value     Vis     Num
+       .data      DATA       0   local     0     1
+       array      DATA       0   local     1     1
+   array_end      DATA       8   local     2     1
+       .text      TEXT       0   local     3     1
+      _start      TEXT       0   local     4     1
+        loop      TEXT       8  global     5     1
+         end      TEXT      30   local     6     1
+     .rodata    RODATA       0   local     7     1
+      printc       UND       0  global     8     0
+
+# Segments' table 
+    Name	Base	Size
+   .data	   0	  14
+   .text	  14	  36
+ .rodata	  50	  20
+
+# .rel .text
+  Offset    Type   Ref
+       2  PC_ABS     0
+       6  PC_ABS     0
+      20  PC_ABS     8
+
+
+# .rel .data
+  Offset    Type   Ref
+       0  PC_ABS     3
+       8  PC_ABS     3
+
+
+# .rel .rodata
+      Offset    Type   Ref
+       8  PC_ABS     3
+
+
+# .text section
+f5 60 00 00 f5 80 08 00 
+d1 8b 35 e0 1e 00 f5 bb 
+00 00 ec 00 08 00 c1 60 
+01 00 c1 f0 08 00 ec 00 
+fe ff e9 e0 
+
+# .data section
+08 00 01 00 ff ff 02 00 
+1e 00 05 00 00 00 
+
+# .rodata section
+00 00 00 00 00 00 00 00 
+08 00 00 00 19 00 00 00 
+14 00 00 00 

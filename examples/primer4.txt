@@ -1,0 +1,28 @@
+.global swap
+.data
+pom: .char 0
+niz: .word 1, 2, -5, 2, 4
+niz_kraj:
+
+.text 
+	mov r1, 5
+	mov r2, 0
+	mov r3, &niz
+
+loop:	mov r4, r3[pom]
+	mov r5, pom
+	add r5, 1
+	mov pom, r5
+	cmp r4, r3[pom]
+
+	callgt &swap
+	cmp r5, 5
+	jmpne &loop	
+	jmpeq &end
+	
+end:	ret
+
+.bss
+	.long loop, end
+
+.end
