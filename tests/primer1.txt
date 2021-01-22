@@ -1,0 +1,28 @@
+.global loop, printc
+ .data 	
+array: .char loop, 1, -1, 2
+array_end:
+.word end, 5, array
+ .text
+
+_start:
+	mov r3, &array
+	mov r4, &array_end
+loop:
+	cmp r4, r3
+	jmpeq &end
+	mov r5, r3[0]
+	
+	call &loop
+	add r3, 1
+	jmp $loop
+
+end:
+	ret
+	
+.rodata
+
+	.skip 7
+	.align 3
+	.long loop, 25, 20 
+.end
